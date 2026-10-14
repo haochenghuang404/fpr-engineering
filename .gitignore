@@ -1,0 +1,16 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Local credentials and environment overrides
+.env
+.env.*
+!.env.example
+
+# Temporary files and generated output
+*.log
+__pycache__/
+*.py[cod]
+.venv/
+build/
+dist/

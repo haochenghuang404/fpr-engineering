@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "fpr-engineering",
+  "version": "0.1.0",
+  "description": "A Codex plugin scaffold for shared FPR engineering workflows.",
+  "author": {
+    "name": "haochenghuang404"
+  },
+  "repository": "https://github.com/haochenghuang404/fpr-engineering",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "FPR Engineering",
+        "shortDescription": "FPR engineering workflows",
+        "longDescription": "A Codex plugin scaffold for shared FPR engineering workflows. No skills or agents are included yet.",
+        "developerName": "haochenghuang404",
+        "category": "Productivity"
+      }
+    }
+  }
+}
