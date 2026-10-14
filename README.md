@@ -2,9 +2,10 @@
 
 A single Codex plugin for reusable FPR engineering workflows.
 
-The repository currently contains plugin metadata, a one-plugin marketplace,
-documentation, and empty extension directories. No skills, agents, MCP servers,
-or lifecycle hooks are implemented.
+The plugin includes `deep-review`, a four-perspective adversarial code review
+workflow, its agent role sources, and supporting security references.
+Project-specific conventions come from the FPR repository being reviewed.
+No MCP servers or lifecycle hooks are included.
 
 ## Repository layout
 
@@ -13,8 +14,9 @@ fpr-engineering/
 ├── plugin.json                         # Plugin identity and Codex presentation
 ├── AGENTS.md                           # Codex repository maintenance instructions
 ├── .agents/plugins/marketplace.json    # One-plugin distribution catalog
-├── skills/                             # Reserved for future skills
-├── agents/                             # Reserved for future agent source files
+├── skills/deep-review/                  # Review workflow and usage
+├── agents/                             # Four review role sources
+│   └── security-knowledge/              # Vulnerability patterns and controls
 ├── scripts/                            # Reserved for future maintenance helpers
 ├── assets/                             # Reserved for future plugin assets
 ├── docs/
@@ -25,23 +27,25 @@ fpr-engineering/
 ```
 
 The repository root is also the plugin root. The marketplace entry points to
-`./`, resolved from the repository root. Empty directories contain `.gitkeep`
-files so Git can preserve the scaffold.
+`./`, resolved from the repository root. Empty extension directories contain
+`.gitkeep` files so Git can preserve them.
 
 ## Codex support
 
 `plugin.json` uses the portable Agent Plugins 1.0 format. OpenAI-specific
 presentation metadata lives under `extensions.com.openai`. Codex discovers
-future packaged skills from the root `skills/` directory.
+packaged skills from the root `skills/` directory.
 
-`agents/` is reserved for source files. It is not a native Codex agent discovery
-directory, and installing the plugin does not register files from it as named
-agents. Agent registration will be designed when agent functionality is added.
+`agents/` contains role prompts loaded explicitly by `deep-review` into
+independent subagents. It is not a native Codex agent discovery directory.
+The workflow resolves all role and reference paths from the installed plugin
+root, so it also works when the reviewed project is a different repository.
 
 ## Getting started
 
 See [Installation](docs/installation.md) for local and private-repository setup.
-Installing this scaffold provides no executable workflows yet.
+See [Deep Review](skills/deep-review/README.md) for supported review targets,
+the four perspectives, and standalone use of individual role prompts.
 
 See [Repository Instructions](AGENTS.md) for Codex maintenance guidance.
 

@@ -2,9 +2,9 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "fpr-engineering",
   "version": "0.1.0",
-  "description": "A Codex plugin scaffold for shared FPR engineering workflows.",
+  "description": "Shared FPR engineering workflows, including deep adversarial code review.",
   "author": {
-    "name": "haochenghuang404"
+    "name": "Haocheng Huang"
   },
   "repository": "https://github.com/haochenghuang404/fpr-engineering",
   "extensions": {
@@ -12,8 +12,8 @@
       "interface": {
         "displayName": "FPR Engineering",
         "shortDescription": "FPR engineering workflows",
-        "longDescription": "A Codex plugin scaffold for shared FPR engineering workflows. No skills or agents are included yet.",
-        "developerName": "haochenghuang404",
+        "longDescription": "Deep adversarial code review for FPR projects using Advocate, Skeptic, Architect, and Security perspectives, shared review context, evidence-based synthesis, and packaged agent role sources.",
+        "developerName": "Haocheng Huang",
         "category": "Productivity"
       }
     }

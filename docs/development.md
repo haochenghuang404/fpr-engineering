@@ -8,14 +8,31 @@ The marketplace catalog lists that plugin once and points to `./`.
 
 ## Extension directories
 
-- `skills/`: future workflow directories containing a `SKILL.md` entry point.
-- `agents/`: future role source files; native Codex registration needs a separate
-  integration design.
+- `skills/`: packaged workflows containing a `SKILL.md` entry point.
+- `agents/`: review role sources and their supporting references. The
+  `deep-review` workflow loads these instructions explicitly into subagents.
 - `scripts/`: future maintenance or packaging helpers.
 - `assets/`: future icons, templates, and other supporting resources.
 
-These directories currently contain only `.gitkeep` files. Add a capability
-when its behavior and project requirements have been explicitly defined.
+The `deep-review` capability occupies `skills/deep-review/` and `agents/`.
+Empty extension directories retain their `.gitkeep` files.
+
+## Deep Review resources
+
+Keep the four role sources and security references inside the plugin root.
+Resolve their paths relative to the skill or role file, then pass absolute
+paths to reviewers. Resolve application architecture, instructions, and test
+commands from the target FPR project.
+
+The `.agent.md` files are Markdown role prompts with name/description
+frontmatter. They are not native Codex custom-agent registration files.
+The skill uses available subagent tools with fresh context and these prompts;
+it does not require user or project configuration changes.
+
+When changing this workflow, validate the skill frontmatter, every packaged
+reference, and the four-perspective context/analysis/synthesis flow. Verify
+resources can also be resolved from a relocated plugin copy. Test installed
+execution in a supported client when installation is explicitly requested.
 
 ## Project boundaries
 

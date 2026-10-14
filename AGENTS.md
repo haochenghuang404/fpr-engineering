@@ -21,8 +21,9 @@ This repository is for developing reusable skills and agents for FPR projects.
 - `.agents/plugins/marketplace.json` lists the single plugin. Keep its entry name
   consistent with the manifest and its source path inside the repository.
 - `skills/` contains packaged workflow directories when a task adds them.
-- `agents/` is reserved for agent source files. Confirm Codex's supported native
-  agent registration mechanism before implementing agent integration; this
+- `agents/` contains agent role sources and supporting references. The
+  `deep-review` skill loads these prompts explicitly into subagents. Confirm
+  Codex's supported mechanism before adding native agent registration; this
   directory alone does not register agents in consuming projects.
 - `scripts/` contains maintenance helpers; `assets/` contains supporting resources.
 - `.gitkeep` files preserve empty directories. Keep directories empty until the

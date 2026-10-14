@@ -1,7 +1,7 @@
 # Installation
 
-This repository is a Codex-only plugin scaffold. It does not provide any skills
-or agents yet. Installation is optional during initialization.
+This repository provides a Codex plugin with the `deep-review` skill,
+four review role sources, and supporting security references.
 
 ## Install from a local checkout
 
@@ -31,7 +31,7 @@ newly registered marketplace is not visible.
 
 ## Install from the private repository
 
-After the scaffold has been committed and pushed, register the Git source:
+After the desired version has been committed and pushed, register the Git source:
 
 ```sh
 codex plugin marketplace add haochenghuang404/fpr-engineering
@@ -52,9 +52,15 @@ codex plugin marketplace upgrade fpr-engineering
 Then use the client's supported update or reinstall flow for the plugin.
 Maintain source files in this repository; installed plugin copies are caches.
 
-## Future agents
+## Review agents
 
 Codex currently discovers native custom agents from `~/.codex/agents/` for a
-user or `.codex/agents/` for a project. The reserved `agents/` directory in this
-plugin does not register native agents automatically. This scaffold includes
-no agent definitions or registration scripts.
+user or `.codex/agents/` for a project, using standalone TOML definitions.
+See the [custom-agent documentation](https://learn.chatgpt.com/docs/agent-configuration/subagents).
+
+The plugin's `agents/` directory holds Markdown role prompts. The `deep-review`
+skill reads them and supplies their instructions to independent subagents, so
+no native agent registration or configuration edits are required.
+After installing or refreshing the plugin, select `deep-review` in the skill
+picker and identify the FPR project and review target. See
+[Deep Review usage](../skills/deep-review/README.md) for details.
